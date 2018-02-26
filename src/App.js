@@ -28,25 +28,30 @@ class App extends Component {
     }
   }
 
+  dealHand() {
+    this.setState({
+      hand: [shuffledDeck().splice(0, 5)]
+    })
+  }
 
   render() {
     // array to hold JSX elements
     let cards = [];
-    let card1 = "http://golearntocode.com/images/cards/" + this.state.hand[0] + ".png";
-    let card2 = "http://golearntocode.com/images/cards/" + this.state.hand[1] + ".png";
-    let card3 = "http://golearntocode.com/images/cards/" + this.state.hand[2] + ".png";
-    let card4 = "http://golearntocode.com/images/cards/" + this.state.hand[3] + ".png";
-    let card5 = "http://golearntocode.com/images/cards/" + this.state.hand[4] + ".png";
+    let card1Image = "http://golearntocode.com/images/cards/" + this.state.hand[0] + ".png";
+    let card2Image = "http://golearntocode.com/images/cards/" + this.state.hand[1] + ".png";
+    let card3Image = "http://golearntocode.com/images/cards/" + this.state.hand[2] + ".png";
+    let card4Image = "http://golearntocode.com/images/cards/" + this.state.hand[3] + ".png";
+    let card5Image = "http://golearntocode.com/images/cards/" + this.state.hand[4] + ".png";
     return (
       <div className="App">
         <h1>
-          <img src={card1} />
-          <img src={card2} />
-          <img src={card3} />
-          <img src={card4} />
-          <img src={card5} />
+          <img src={card1Image} />
+          <img src={card2Image} />
+          <img src={card3Image} />
+          <img src={card4Image} />
+          <img src={card5Image} />
         </h1>
-        <p><button>Deal a new hand</button></p>
+        <p><button><a href="#" onClick={() => this.dealHand()}> Deal a new hand </a></button></p>
       </div>
     );
   }
