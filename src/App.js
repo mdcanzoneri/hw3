@@ -30,7 +30,7 @@ class App extends Component {
 
   dealHand() {
     this.setState({
-      hand: [shuffledDeck().splice(0, 5)]
+      hand: shuffledDeck().splice(0, 5)
     })
   }
 
